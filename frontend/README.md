@@ -1,17 +1,30 @@
-## Dự án tốt nghiệp - eCommerceNghienDT
-Xây dựng ứng dụng web nhằm mục đích bán hàng online
-## Backend
-> Link: **_https://github.com/duyplus/eCommerceNghienDT_**
-## Demo
-> Link: **_https://nghiendt.vercel.app_**
+## Dự án tốt nghiệp - Frontend sàn thương mại điện tử NghienDT
 
-> Link: **_http://nghiendt.me_**
+Frontend web cho hệ thống thương mại điện tử, gồm giao diện khách hàng và trang quản trị.
 
-### Git clone
-```git
-  git init
-  git clone https://github.com/duyplus/NghienDT.git
+## Thành phần
+
+- Storefront: giao diện mua sắm cho người dùng cuối
+- Admin: giao diện quản lý sản phẩm, đơn hàng, người dùng, danh mục, hãng
+
+## Công nghệ
+
+- AngularJS
+- Bootstrap
+- HTML, CSS, JavaScript
+
+## Chạy frontend local
+
+Frontend là static web, có thể chạy bằng bất kỳ static server nào.
+
+Ví dụ dùng Python:
+
+```bash
+python -m http.server 5500
 ```
-### License
-The source code for the site is licensed under the MIT license. Please
-see [the license terms](https://github.com/duyplus/NghienDT/blob/master/LICENSE).
+
+Mặc định frontend đang gọi API local backend tại `http://localhost:8081`.
+
+## License
+
+Dự án sử dụng giấy phép MIT. Xem file `LICENSE` trong thư mục frontend.

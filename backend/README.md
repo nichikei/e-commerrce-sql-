@@ -1,59 +1,48 @@
-## Dự án tốt nghiệp - Sàn thương mại điện tử NghienDT
+## Dự án tốt nghiệp - Backend sàn thương mại điện tử NghienDT
 
-Xây dựng ứng dụng web với mục đích tạo ra cho bạn một kênh mua bán hàng trực tuyến, kết nối người mua với người bán lại
-với nhau bằng những giao dịch cực kỳ đơn giản, tiện lợi, nhanh chóng, an toàn, mang đến hiệu quả bất ngờ.
+Backend REST API cho hệ thống thương mại điện tử, phục vụ cả storefront và admin dashboard.
 
-© 2022 NghienTeam.
+## Công nghệ
 
-### Frontend
+- Java, Spring Boot, Spring Security
+- Spring Data JPA, SQL Server/MySQL
+- Maven
 
-> Link: **_https://github.com/duyplus/NghienDT_**
+## Chức năng chính
 
-### Sàn thương mại điện tử
+- Xác thực người dùng, đăng ký/đăng nhập, xử lý JWT
+- CRUD cho USER, CATEGORY, COMPANY, PRODUCT, ORDER, REVIEW, BANNER, SETTING
+- Báo cáo doanh thu theo ngày và thống kê sản phẩm
+- Upload file và phục vụ static resource
 
-- Các chức năng chính:
-    + Đăng ký, đăng nhập tài khoản
-    + Quên mật khẩu, đổi mật khẩu, thông tin người dùng
-    + Người dùng có thể đăng bán hoặc mua sản phẩm
-    + Quản lý sản phẩm, người dùng, đáng giá, danh mục, hãng
-    + Xem danh sách sản phẩm, tìm kiếm, lọc sản phẩm
-    + Giỏ hàng, huỷ và duyệt đơn hàng, hóa đơn chi tiết, mã giảm giá, thanh toán
-    + Doanh thu đơn hàng theo ngày
-    + Thống kê sản phẩm theo danh mục, hãng, thời gian
-- Công nghệ sử dụng:
-    + Java Core, Spring Boot, Spring Security
-    + AngularJS, Bootstrap, HTML, CSS, Javascript, SQL,...
-- Môi trường phát triển:
-    + IntelliJ IDEA
-    + Visual Studio Code
-    + Microsoft SQL Server
-    + MySQL Workbench
-- Công cụ hỗ trợ:
-    + Postman
-    + Swagger
-    + Lombok
-    + JPA Buddy
+## Quy ước API CRUD
 
-## CRUD Rest APIs
+Áp dụng cho các resource chính như `user`, `category`, `company`, `product`, `order`, `review`.
 
-##### USER, CATEGORY, COMPANY, PRODUCT, ORDER, REVIEW,... = (name)
+| Method | URL             | Status Code      | Action                   |
+|--------|-----------------|------------------|--------------------------|
+| GET    | /api/(name)     | 200 (OK)         | Retrieve all (name)      |
+| POST   | /api/(name)     | 201 (Created)    | Create a new (name)      |
+| GET    | /api/(name)/:id | 200 (OK)         | Retrieve a (name) by :id |
+| PUT    | /api/(name)/:id | 200 (OK)         | Update a (name) by :id   |
+| DELETE | /api/(name)/:id | 204 (No Content) | Delete a (name) by :id   |
 
-| Methods | Urls            | Status Code      | Actions                  |
-|---------|-----------------|------------------|--------------------------|
-| GET     | /api/(name)     | 200 (OK)         | Retrieve all (name)      |
-| POST    | /api/(name)     | 201 (Created)    | Create a new (name)      |
-| GET     | /api/(name)/:id | 200 (OK)         | Retrieve a (name) by :id |
-| PUT     | /api/(name)/:id | 200 (OK)         | Update a (name) by :id   |
-| DELETE  | /api/(name)/:id | 204 (No Content) | Delete a (name) by :id   ||
+## Chạy backend
 
-### Git clone
+1. Cấu hình DB trong `src/main/resources/application.properties`.
+2. Seed dữ liệu bằng script SQL trong thư mục gốc backend nếu cần.
+3. Chạy lệnh:
 
-```
-  git init
-  git clone https://github.com/duyplus/eCommerceNghienDT.git
+```bash
+./mvnw spring-boot:run
 ```
 
-### License
+Trên Windows:
 
-The source code for the site is licensed under the MIT license. Please
-see [the license terms](https://github.com/duyplus/eCommerceNghienDT/blob/master/LICENSE).
+```powershell
+.\mvnw.cmd spring-boot:run
+```
+
+## License
+
+Dự án sử dụng giấy phép MIT. Xem file `LICENSE` trong thư mục backend.
